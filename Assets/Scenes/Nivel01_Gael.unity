@@ -298,6 +298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 618723479}
+  - component: {fileID: 618723484}
   - component: {fileID: 618723482}
   - component: {fileID: 618723483}
   - component: {fileID: 618723480}
@@ -394,7 +395,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618723477}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f42a21d6703f6244bb8af58c76697cf, type: 3}
   m_Name: 
@@ -420,6 +421,19 @@ MonoBehaviour:
   maxHealth: 100
   enemyDamage: 50
   healthSlider: {fileID: 976338285}
+--- !u!114 &618723484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618723477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 593b7cb91512aeb4da7d674bc7f17c7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 2
 --- !u!1 &740454973
 GameObject:
   m_ObjectHideFlags: 0
