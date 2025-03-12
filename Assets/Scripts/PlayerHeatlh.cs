@@ -6,7 +6,7 @@ public class PlayerHeatlh : MonoBehaviour
 {
     public int currentHealth;
     public int maxHealth = 100;
-    public int enemyDamage = 50;
+    public int enemyDamage = 25;
 
     public HealthSlider healthSlider;
 
