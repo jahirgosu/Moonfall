@@ -262,11 +262,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 398194078}
+  - component: {fileID: 398194082}
+  - component: {fileID: 398194083}
   - component: {fileID: 398194077}
   - component: {fileID: 398194076}
   - component: {fileID: 398194079}
-  - component: {fileID: 398194083}
-  - component: {fileID: 398194082}
   - component: {fileID: 398194080}
   m_Layer: 0
   m_Name: Player
@@ -343,7 +343,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -873407591, guid: a660880a28dade24c8b5d0983693471f, type: 3}
+  m_Sprite: {fileID: -858819368, guid: d0af936805db62547b070750d27ee4ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
