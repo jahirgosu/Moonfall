@@ -10,6 +10,8 @@ public class CircularHealthBar : MonoBehaviour
     public float currentHealth = 100f;
     public float enemyDamage = 25f;
 
+    float lerpSpeed;
+
 
 
 
@@ -32,8 +34,12 @@ public class CircularHealthBar : MonoBehaviour
             if (currentHealth < 0) currentHealth = 0;
         }
 
+
         // Actualizas la UI
         circleImage.fillAmount = currentHealth / maxHealth;
+
+
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
