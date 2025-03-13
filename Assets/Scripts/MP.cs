@@ -4,35 +4,95 @@ using UnityEngine;
 
 public class MP : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 3.0f;
-    private Rigidbody2D rigby;
-    private Vector2 moveDirect;
-    private Animator animator;
+    [Header("Movement Settings")]
+    [Range(0f, 50f)]
+    public float runSpeed = 2f;
+    public float movementSmoothing = 0.05f;
+    [Header("Jump Settings")]
+    public float jumpForce = 400f;
+    public Transform groundCheck;
+    public float groundCheckRadius = 0.2f;
+    public LayerMask groundLayer;
+    [Header("Animation Settings")]
+    public Animator animator;
 
-    void Start()
+    private Rigidbody2D rigidbody2D;
+    private float horizontalMove = 0f;
+    private Vector3 currentVelocity;
+    private float compensationSpeed = 10f;
+    private bool facingRight = true;
+    private bool jumpPressed = false;
+    private bool isGrounded = false;
+
+
+    private void Awake()
     {
-        rigby = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-   
-    void Update()
+    private void Update()
     {
-        moveDirect = new Vector2(Input.GetAxis("Horizontal"), 0).normalized;
-        animator.SetFloat("Speed", Mathf.Abs(moveDirect.magnitude * movementSpeed));
+        horizontalMove = Input.GetAxis("Horizontal") * runSpeed;
 
-        bool flipped = moveDirect.x < 0;
-        this.transform.rotation = Quaternion.Euler(new Vector3(0f, flipped ? 180f : 0f, 0f ));
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            animator.SetBool("MovementBool", true);
+        }
+        else
+        {
+            animator.SetBool("MovementBool", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            jumpPressed = true;
+        }
     }
 
     private void FixedUpdate()
     {
-        rigby.velocity = moveDirect * movementSpeed;
-
-        if(moveDirect != Vector2.zero)
+        isGrounded = false;
+        Collider2D[] groundColliders = Physics2D.OverlapCircleAll(groundCheck.position, groundCheckRadius, groundLayer);
+        for (int i = 0; i < groundColliders.Length; i++)
         {
-            var xMoveD = moveDirect.x * movementSpeed * Time.deltaTime;
-            this.transform.Translate(new Vector3(xMoveD, 0), Space.World);
+            if (groundColliders[i].gameObject != this.gameObject)
+            {
+                isGrounded = true;
+            }
         }
+
+        Move(horizontalMove * Time.fixedDeltaTime);
+        if (horizontalMove > 0f && !facingRight)
+        {
+
+            Flip();
+
+        }
+        else if (horizontalMove < 0f && facingRight)
+        {
+            Flip();
+        }
+    }
+
+    private void Move(float _move)
+    {
+        Vector3 targetVelocity = new Vector2(_move * compensationSpeed, rigidbody2D.velocity.y);
+        rigidbody2D.velocity = Vector3.SmoothDamp(rigidbody2D.velocity, targetVelocity, ref currentVelocity, movementSmoothing);
+
+        if (jumpPressed && isGrounded)
+        {
+
+            rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+            jumpPressed = false;
+            isGrounded = false;
+        }
+    }
+
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 targetScale = transform.localScale;
+        targetScale.x *= -1;
+        transform.localScale = targetScale;
     }
 }
