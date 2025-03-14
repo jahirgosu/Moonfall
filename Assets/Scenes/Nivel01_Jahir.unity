@@ -632,7 +632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593b7cb91512aeb4da7d674bc7f17c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 40.6
+  runSpeed: 39.7
   movementSmoothing: 0.05
   jumpForce: 400
   groundCheck: {fileID: 890230964}
