@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 15507224849aa1647ae566259ba6d8ab
+guid: d0af936805db62547b070750d27ee4ae
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: runsheet_0
+      name: IDLE FEN_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ca49b2e47cd0654584e7a86ed5daa86
-      internalID: -91273836
+      spriteID: 3292f3adae470734086e4975d68c3fd5
+      internalID: -858819368
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: runsheet_1
+      name: IDLE FEN_1
       rect:
         serializedVersion: 2
         x: 1024
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 063e8fa2278fa9040b5fd589b42276e5
-      internalID: 1305418841
+      spriteID: d16f032218f627446aee3e714fa5e411
+      internalID: 1651977554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: runsheet_2
+      name: IDLE FEN_2
       rect:
         serializedVersion: 2
         x: 2048
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb13f8a6a54f5324a803001fc552e71e
-      internalID: 284204242
+      spriteID: b3a2f7faa73cc484a805d69c3ccc6c5d
+      internalID: 2046361996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: runsheet_3
+      name: IDLE FEN_3
       rect:
         serializedVersion: 2
         x: 3072
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54f7a0df514c7cc428cd8211097eb0fe
-      internalID: 1054834526
+      spriteID: e2a2f8f1a3bc5e74c999524beb44b0a3
+      internalID: 464467934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: runsheet_4
+      name: IDLE FEN_4
       rect:
         serializedVersion: 2
         x: 4096
@@ -195,8 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32e81cbe46c7497438007d2a3a74a632
-      internalID: 423705175
+      spriteID: ebfa856d75790ef478d32f3b3d21fb59
+      internalID: -1261734623
       vertices: []
       indices: 
       edges: []
@@ -204,7 +204,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5387d2b0314fe9a44adcfb7fa39952c6
+    spriteID: cad926f2b4ce9e84788b0a5f924fb861
     internalID: 0
     vertices: []
     indices: 
@@ -212,11 +212,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      runsheet_0: -91273836
-      runsheet_1: 1305418841
-      runsheet_2: 284204242
-      runsheet_3: 1054834526
-      runsheet_4: 423705175
+      IDLE FEN_0: -858819368
+      IDLE FEN_1: 1651977554
+      IDLE FEN_2: 2046361996
+      IDLE FEN_3: 464467934
+      IDLE FEN_4: -1261734623
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a660880a28dade24c8b5d0983693471f
+guid: 4eeb1e7dbc411b643a2f0c22622bbf9f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idlesheet_0
+      name: FEN RUN SHEET_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22eba19b770c6c8408441346c4aa1d0d
-      internalID: -873407591
+      spriteID: aebd0f6ccd54d4540bf0ee114c5568e9
+      internalID: -528897446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idlesheet_1
+      name: FEN RUN SHEET_1
       rect:
         serializedVersion: 2
         x: 1024
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32be9c6299431434c8542e2b2268310f
-      internalID: -513970336
+      spriteID: 224eccedb8107aa489f1e392525b69a4
+      internalID: 1757551236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idlesheet_2
+      name: FEN RUN SHEET_2
       rect:
         serializedVersion: 2
         x: 2048
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aba9e08dce7d13d4fa4d292c0b390465
-      internalID: -1387908187
+      spriteID: e80e1aaf47b0f7c498f0e3c28daf2a15
+      internalID: -1013835793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idlesheet_3
+      name: FEN RUN SHEET_3
       rect:
         serializedVersion: 2
         x: 3072
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a87df61b4b458ee498700823974e71d5
-      internalID: 565064626
+      spriteID: 745f6092a53a8d5488f285c60f313ffb
+      internalID: -1724486159
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idlesheet_4
+      name: FEN RUN SHEET_4
       rect:
         serializedVersion: 2
         x: 4096
@@ -195,8 +195,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 090491fe9b88e5048b7370c6445b599f
-      internalID: -491879475
+      spriteID: 4049e42dfce3bf94cb1251d1c54acf46
+      internalID: -421521541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FEN RUN SHEET_5
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb3e24d3510ce94c8c3643475422e76
+      internalID: 1371431026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FEN RUN SHEET_6
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ce50a6438727d84ea10aa8fa234469d
+      internalID: 29686226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FEN RUN SHEET_7
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d9ae301e8ca228429853feeaaecee5b
+      internalID: -795349955
       vertices: []
       indices: 
       edges: []
@@ -204,7 +267,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 160fbe0b50fb78d40abf72365cd233ed
+    spriteID: f118ac88521b42544b96ba0d9232fc66
     internalID: 0
     vertices: []
     indices: 
@@ -212,11 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      idlesheet_0: -873407591
-      idlesheet_1: -513970336
-      idlesheet_2: -1387908187
-      idlesheet_3: 565064626
-      idlesheet_4: -491879475
+      FEN RUN SHEET_0: -528897446
+      FEN RUN SHEET_1: 1757551236
+      FEN RUN SHEET_2: -1013835793
+      FEN RUN SHEET_3: -1724486159
+      FEN RUN SHEET_4: -421521541
+      FEN RUN SHEET_5: 1371431026
+      FEN RUN SHEET_6: 29686226
+      FEN RUN SHEET_7: -795349955
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
