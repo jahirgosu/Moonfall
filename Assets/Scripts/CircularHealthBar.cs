@@ -10,7 +10,6 @@ public class CircularHealthBar : MonoBehaviour
     public float currentHealth = 100f;
     public float enemyDamage = 25f;
 
-    float lerpSpeed;
 
 
 
@@ -41,6 +40,8 @@ public class CircularHealthBar : MonoBehaviour
 
 
     }
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")

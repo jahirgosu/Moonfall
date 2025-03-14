@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nivel01_Gael.unity
     guid: 870401858a62fd341bee9a5fe4693c73
+  - enabled: 1
+    path: Assets/Scenes/Nivel01_Jahir.unity
+    guid: cee7be8e2f6a0154a9541bf32d2f696d
   m_configObjects: {}
