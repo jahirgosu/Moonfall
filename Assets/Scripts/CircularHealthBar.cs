@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class CircularHealthBar : MonoBehaviour
 {
     public Image circleImage;
+    public Image idleImage;
+    public Image damagedImage;
+    public Sprite meow;
     public float maxHealth = 100f;
     public float currentHealth = 100f;
     public float enemyDamage = 25f;
