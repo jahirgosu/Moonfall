@@ -8,6 +8,8 @@ public class MP : MonoBehaviour
     [Range(0f, 50f)]
     public float runSpeed = 2f;
     public float movementSmoothing = 0.05f;
+    public float Vis_xVel;
+    public float Vis_yVel;
 
     [Header("Jump Settings")]
     public float jumpForce = 400f;
@@ -45,6 +47,10 @@ public class MP : MonoBehaviour
     private void Update()
     {
         horizontalMove = Input.GetAxis("Horizontal") * runSpeed;
+
+        animator.SetFloat("xVelocity", Mathf.Abs(rigidbody2D.velocity.x));
+        animator.SetFloat("yVelocity", rigidbody2D.velocity.y);
+
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
@@ -95,6 +101,12 @@ public class MP : MonoBehaviour
         Vector3 targetVelocity = new Vector2(_move * compensationSpeed, rigidbody2D.velocity.y);
         rigidbody2D.velocity = Vector3.SmoothDamp(rigidbody2D.velocity, targetVelocity, ref currentVelocity, movementSmoothing);
 
+        if( isGrounded )
+        {
+            isGrounded = true;
+            animator.SetBool("isJumping", !isGrounded);
+        }
+
         if (jumpPressed && isGrounded)
         {
 
@@ -104,6 +116,7 @@ public class MP : MonoBehaviour
             isJumping = true;
             isGrounded = false;
             jumpCounter = 0;
+            animator.SetBool("isJumping", !isGrounded);
         }
 
         if (rigidbody2D.velocity.y > 0 && isJumping)

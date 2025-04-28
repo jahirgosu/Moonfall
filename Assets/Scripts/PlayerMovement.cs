@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
             isGround = false;
+            animator.SetBool("isJumping", !isGround);
         }
 
     }
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         //transform.position += new Vector3(movement, 0f, 0f) * Time.fixedDeltaTime * moveSpeed;
         rb.velocity = new Vector2(movement * moveSpeed, rb.velocity.y);
         animator.SetFloat("xVelocity", Math.Abs(rb.velocity.x));
+        animator.SetFloat("yVelocity", rb.velocity.x);
     }
 
     private void Jump()
@@ -59,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isGround = true;
+            animator.SetBool("isJumping", !isGround);
         }
     }
 
