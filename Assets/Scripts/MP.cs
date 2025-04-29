@@ -104,7 +104,6 @@ public class MP : MonoBehaviour
         if( isGrounded )
         {
             isGrounded = true;
-            animator.SetBool("isJumping", !isGrounded);
         }
 
         if (jumpPressed && isGrounded)
@@ -116,7 +115,7 @@ public class MP : MonoBehaviour
             isJumping = true;
             isGrounded = false;
             jumpCounter = 0;
-            animator.SetBool("isJumping", !isGrounded);
+            animator.SetBool("isJumping", true);
         }
 
         if (rigidbody2D.velocity.y > 0 && isJumping)
@@ -125,6 +124,7 @@ public class MP : MonoBehaviour
             if (jumpCounter > jumpTime)
             {
                 isJumping = false;
+                animator.SetBool("isJumping", false);
             }
             rigidbody2D.velocity += vecGravity * jumpMult * Time.deltaTime;
         }
@@ -132,6 +132,7 @@ public class MP : MonoBehaviour
         if (Input.GetButtonUp("Jump"))
         {
             isJumping = false;
+            animator.SetBool("isJumping", false);
         }
 
         if(rigidbody2D.velocity.y < 0)
