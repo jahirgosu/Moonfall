@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nivel01_Jahir.unity
     guid: cee7be8e2f6a0154a9541bf32d2f696d
+  - enabled: 1
+    path: Assets/Scenes/NO TOCAR.unity
+    guid: 9f40e906a68190a4989c2594e22108c1
   m_configObjects: {}
