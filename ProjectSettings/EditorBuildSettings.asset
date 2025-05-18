@@ -9,15 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Scenes/IntroMenu.unity
+    guid: d2c9cae44202d2a4489aabf8774b215b
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: d3ddb39629c9d7e43bbe057a4cd9e052
+  - enabled: 1
+    path: Assets/Scenes/IntroGame.unity
+    guid: cc88778a02232a441bd33428b508f816
+  - enabled: 1
+    path: Assets/Scenes/NO TOCAR.unity
+    guid: 9f40e906a68190a4989c2594e22108c1
   - enabled: 1
     path: Assets/Scenes/Nivel01_Gael.unity
     guid: 870401858a62fd341bee9a5fe4693c73
   - enabled: 1
     path: Assets/Scenes/Nivel01_Jahir.unity
     guid: cee7be8e2f6a0154a9541bf32d2f696d
-  - enabled: 1
-    path: Assets/Scenes/NO TOCAR.unity
-    guid: 9f40e906a68190a4989c2594e22108c1
   m_configObjects: {}
