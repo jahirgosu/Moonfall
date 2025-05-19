@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class PA : MonoBehaviour
 {
     [Header("Attack Settings")]
     public int damagePoints;
@@ -26,10 +26,11 @@ public class PlayerAttack : MonoBehaviour
     public void Attack()
     {
         Collider2D[] enemyColliders = Physics2D.OverlapCircleAll(attackOrigin.position, attackRangeRadius, enemyLayer);
-        for (int i = 0; i < enemyColliders.Length; i++) {
+        for (int i = 0; i < enemyColliders.Length; i++)
+        {
             GameObject enemy = enemyColliders[i].gameObject;
             enemy.gameObject.GetComponent<AIBrain>().TransitionToState("Damaged");
-            enemy.gameObject.GetComponent<Health>().TakeDamage(damagePoints);
+           
             Vector3 attackDir = enemy.transform.position - attackOrigin.position;
             enemy.gameObject.GetComponent<Rigidbody2D>().AddForce(attackDir.normalized * pushbackForce);
         }
