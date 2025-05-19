@@ -37,6 +37,8 @@ public class MP : MonoBehaviour
     private bool isJumping;
     float jumpCounter;
 
+    [Header("Attack Settings")]
+    public Transform Aim;
 
     private void Awake()
     {
@@ -71,12 +73,16 @@ public class MP : MonoBehaviour
     {
         // Crea un collider para checar si está pisando el GROUND LAYER
         isGrounded = false;
+        animator.SetBool("isGrounded", false);
+        //animator.SetBool("isJumping", true);
         Collider2D[] groundColliders = Physics2D.OverlapCircleAll(groundCheck.position, groundCheckRadius, groundLayer);
         for (int i = 0; i < groundColliders.Length; i++)
         {
             if (groundColliders[i].gameObject != this.gameObject)
             {
                 isGrounded = true;
+                animator.SetBool("isGrounded", true);
+                animator.SetBool("isJumping", false);
             }
         }
 
@@ -104,6 +110,8 @@ public class MP : MonoBehaviour
         if( isGrounded )
         {
             isGrounded = true;
+            animator.SetBool("isGrounded", true);
+            animator.SetBool("isJumping", false);
         }
 
         if (jumpPressed && isGrounded)
@@ -115,6 +123,7 @@ public class MP : MonoBehaviour
             isJumping = true;
             isGrounded = false;
             jumpCounter = 0;
+            animator.SetBool("isGrounded", false);
             animator.SetBool("isJumping", true);
         }
 

@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CircularHealthBar : MonoBehaviour
@@ -31,16 +32,16 @@ public class CircularHealthBar : MonoBehaviour
 
     void Update()
     {
-        // Ejemplo: Al presionar H, reduces vida
-        if (Input.GetKeyDown(KeyCode.H))
+
+        if (currentHealth <= 0)
         {
-            currentHealth -= 10;
-            if (currentHealth < 0) currentHealth = 0;
+            SceneManager.LoadScene("GameOver");
         }
 
         // Actualizas la UI
         float targetFillAmount = currentHealth / maxHealth;
         circleImage.DOFillAmount(targetFillAmount, fillSpeedAmount);
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -50,7 +51,10 @@ public class CircularHealthBar : MonoBehaviour
             currentHealth -= enemyDamage;
             if (currentHealth < 0) currentHealth = 0;
             //circleImage.fillAmount = currentHealth / maxHealth;
-            if (currentHealth <= 0) Destroy(gameObject);
+            if (currentHealth <= 0)
+            {
+                GameOverScene();
+            }
 
             //circleImage.fillAmount = currentHealth / maxHealth;
             // DOVirtual.DelayedCall(_damageDelay);
@@ -78,5 +82,10 @@ public class CircularHealthBar : MonoBehaviour
         damagedImage.gameObject.SetActive(false);
         idleImage.gameObject.SetActive(true);
         }
+
+    public void GameOverScene()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
 
     }
