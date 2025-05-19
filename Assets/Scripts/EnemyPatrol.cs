@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
+    public bool canMove = true;
+
+
     // left point
     public GameObject pointA;
     // right
@@ -24,17 +27,23 @@ public class EnemyPatrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!canMove)
+        {
+            rb.velocity = Vector2.zero;
+            return;
+        }
+
         Vector2 point = currentPoint.position - transform.position;
-        if(currentPoint == pointB.transform)
+        if (currentPoint == pointB.transform)
         {
             rb.velocity = new Vector2(speed, 0);
         }
-        else 
+        else
         {
-            rb.velocity = new Vector2 (-speed, 0);
+            rb.velocity = new Vector2(-speed, 0);
         }
 
-        if(Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint ==  pointB.transform)
+        if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
         {
             flip();
             currentPoint = pointA.transform;
@@ -46,6 +55,7 @@ public class EnemyPatrol : MonoBehaviour
             currentPoint = pointB.transform;
         }
     }
+
 
     private void flip()
     {

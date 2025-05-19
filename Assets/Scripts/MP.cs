@@ -22,6 +22,10 @@ public class MP : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
+    private bool wasGroundedLastFrame = false;
+
+    private Coroutine stepCoroutine;
+    private bool isWalking = false;
 
 
     [Header("Animation Settings")]
@@ -37,11 +41,14 @@ public class MP : MonoBehaviour
     private bool isJumping;
     float jumpCounter;
 
+    AudioManager audioManager;
+
     [Header("Attack Settings")]
     public Transform Aim;
 
     private void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         vecGravity = new Vector2(0,Physics2D.gravity.y);
     }
@@ -49,6 +56,24 @@ public class MP : MonoBehaviour
     private void Update()
     {
         horizontalMove = Input.GetAxis("Horizontal") * runSpeed;
+
+        // Detectar si camina en el suelo
+        bool currentlyWalking = Mathf.Abs(horizontalMove) > 0.1f && isGrounded;
+
+        if (currentlyWalking && !isWalking)
+        {
+            isWalking = true;
+            stepCoroutine = StartCoroutine(PlayFootsteps());
+        }
+        else if (!currentlyWalking && isWalking)
+        {
+            isWalking = false;
+            if (stepCoroutine != null)
+            {
+                StopCoroutine(stepCoroutine);
+            }
+        }
+
 
         animator.SetFloat("xVelocity", Mathf.Abs(rigidbody2D.velocity.x));
         animator.SetFloat("yVelocity", rigidbody2D.velocity.y);
@@ -74,7 +99,7 @@ public class MP : MonoBehaviour
         // Crea un collider para checar si está pisando el GROUND LAYER
         isGrounded = false;
         animator.SetBool("isGrounded", false);
-        //animator.SetBool("isJumping", true);
+
         Collider2D[] groundColliders = Physics2D.OverlapCircleAll(groundCheck.position, groundCheckRadius, groundLayer);
         for (int i = 0; i < groundColliders.Length; i++)
         {
@@ -83,8 +108,18 @@ public class MP : MonoBehaviour
                 isGrounded = true;
                 animator.SetBool("isGrounded", true);
                 animator.SetBool("isJumping", false);
+
+                // DETECTA ATERIZAJE
+                if (!wasGroundedLastFrame)
+                {
+                    // Reproducir sonido de caída
+                    audioManager.PlaySFX(audioManager.Fall);
+                }
+
             }
         }
+
+        wasGroundedLastFrame = isGrounded;
 
         // Mueve dereha o izquierda
         Move(horizontalMove * Time.fixedDeltaTime);
@@ -116,7 +151,7 @@ public class MP : MonoBehaviour
 
         if (jumpPressed && isGrounded)
         {
-
+            audioManager.PlaySFX(audioManager.Jump);
             rigidbody2D.AddForce(new Vector2(0f, jumpForce));
             //rigidbody2D.velocity = new Vector2(0f, jumpForce);
             jumpPressed = false;
@@ -158,4 +193,15 @@ public class MP : MonoBehaviour
         targetScale.x *= -1;
         transform.localScale = targetScale;
     }
+
+    private IEnumerator PlayFootsteps()
+    {
+        while (true)
+        {
+            audioManager.PlaySFX(audioManager.footsteps, 0.9f, 1.1f); // Pitch aleatorio entre 0.9 y 1.1
+            yield return new WaitForSeconds(0.4f); // Tiempo entre pasos
+        }
+    }
+
+
 }

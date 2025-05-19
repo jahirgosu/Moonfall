@@ -13,7 +13,7 @@ public class LogoAnimation : MonoBehaviour
 
     public void StartLogo()
     {
-        transform.LeanMoveLocal(new Vector2(0, 74), 1).setEaseOutQuad();
-        Logo.transform.LeanMoveLocal(new Vector2(392, -208), 1).setEaseOutQuad();
+        transform.LeanMoveLocal(new Vector2(0, 225), 1).setEaseOutQuad();
+        Logo.transform.LeanMoveLocal(new Vector2(680, -391), 1).setEaseOutQuad();
     }
 }

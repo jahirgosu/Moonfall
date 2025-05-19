@@ -1,3 +1,4 @@
+using DG.Tweening.Core.Easing;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,10 +9,14 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-         EnemyScript enemy = collision.GetComponent<EnemyScript>();
-        if(enemy != null)
+        if (collision.tag == "Enemy")
         {
-            enemy.TakeDamage(damage);
+            EnemyScript ENEMYY = collision.GetComponent<EnemyScript>();
+            if (ENEMYY != null)
+            {
+                ENEMYY.TakeDamage(damage);
+            }
         }
     }
+
 }

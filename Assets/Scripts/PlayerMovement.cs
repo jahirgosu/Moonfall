@@ -14,6 +14,12 @@ public class PlayerMovement : MonoBehaviour
     private float movement;
     private bool isFacingRight = false;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     private void Start()
     {
         animator = GetComponent<Animator>();

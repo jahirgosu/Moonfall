@@ -10,6 +10,13 @@ public class PlayerAttack : MonoBehaviour
     float attackTimer = 0f;
     float attackDuration = 0.5f;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -29,6 +36,8 @@ public class PlayerAttack : MonoBehaviour
         {
             Melee.SetActive(true);
             isAttacking = true;
+            audioManager.PlaySFX(audioManager.Attack);
+
             //Call animator to play attack
             //anim.SetBool("isAttacking", true);
         }

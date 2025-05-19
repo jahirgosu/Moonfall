@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - Audio
   layers:
   - Default
   - TransparentFX
@@ -42,4 +43,31 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Arbol chiquito
+    uniqueID: 782061039
+    locked: 0
+  - name: Arbol mediano
+    uniqueID: 448871609
+    locked: 0
+  - name: Overlay
+    uniqueID: 3401275861
+    locked: 0
+  - name: Arbol grande
+    uniqueID: 926739187
+    locked: 0
+  - name: Arbustos atras player
+    uniqueID: 1982664191
+    locked: 0
+  - name: Player
+    uniqueID: 2496284413
+    locked: 0
+  - name: Arbustos
+    uniqueID: 3487574939
+    locked: 0
+  - name: GroundMap
+    uniqueID: 1890798355
+    locked: 0
+  - name: Foreground
+    uniqueID: 3374097893
     locked: 0
